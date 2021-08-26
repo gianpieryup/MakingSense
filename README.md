@@ -185,9 +185,9 @@ string list = string.Join(",", numbers);
 string name = "Mosh";
 char firstChar = name[0];
 
-// Cadenas literales
+// Cadenas literales -------------------------
 string path = "c:\\projects\\folder1";
-string path = @"c:\projects\folder1"; // Este es equi elmino los exesos \
+string path =  @"c:\projects\folder1"; // Este es equi elmino los exesos \
 ````
 
 
@@ -246,5 +246,142 @@ timeSpan.Add() // LE paso por paramtro otro TimeSpan
 timeSpan.Subtract()
     
 CW("Parse: " + TimeSpan.Parse("01:02:03"))  
+````
+
+
+
+#### String
+
+Es inmmutable, ni siquiera los métodos lo pueden modificar, devuelven una nueva cadena
+
+````c#
+ToLower() // Develve una nueva cadea Minuscula
+ToUpper() //
+Trim() // DEvuelve una nueva cadena
+IndexOF('a') // devuelve el indice de la primera aparicion del caracter
+LastIndexOf("Hello")
+    
+// Metodo Sobrevargado
+Substring(starIndex) // A partir de ese indice en adelante
+Substring(starIndex, length) // Hasta una determinada longitud
+
+// Reemplazar
+Replace('a','!')
+Replace("mosh","moshfegh")
+    
+String.IsNullOrEmpty(str) // Cadena vacia ('')
+String.IsNullOrWhiteSpace(str) // ("  ") or ('') lo hace trimiando el str
+str.Split(' ');
+// Lo opuesto a Splitear
+String.Join(" ",str); // Joinea cada elem de "str" con el caracter " "
+
+string s = "1234";
+int i = int.Parse(s); // Puedo botar exepcion cuando es 0
+int j = Convert.ToInt32(s); // Es mas facil y mas seguro
+
+int i = 1234;
+string s = i.ToString(); // "1234"
+string t = i.ToString("C"); // "$1,234.00"
+string w = i.ToString("C0"); // "$1,234"
+
+C | Currency | 12(C) -> $12
+````
+
+
+
+#### StringBuilder
+
+No tiene ningún método para buscar en cadenas. Si necesita buscar en una cadena que está construyendo usando un **StringBuilder**, *primero debe cubrirla con una cadena*: `builder.ToString().IndexOf('M')`
+
+````c#
+// Este es Mutable
+var builder = new StringBuilder();
+builder.Append('-',10); // Se agrega el caracter repetido 10 veces
+builder.AppendLine(); // '\n'
+builder.Append('-',"Header");
+builder.Remove(0,10);
+builder.Insert(0, new string('-'. 10));
+
+// Podemos concatenar esto de una forma visualente amistosa
+builder
+    .Append('-',10)
+    .AppendLine()
+    .Append('-',"Header")
+    .AppendLine()
+    .Append('-',10)
+    .Replace('-','+');
+````
+
+
+
+**Sección 9: Working with Files**
+
+````c#
+// Osea Archivos y Directorios
+use System.IO;
+
+// Operaciones con FILEs
+var path=@"c:\sonefile.jpg";
+FileInfo : provee instance methods // Mas performance (1 solo comprovacion de permiso)
+var fileInfo = new FileInfo(path);
+fileInfo.CopyTo("...");
+        
+    
+File : provee static methods
+// Tiene para leer el otro no
+// Cada vez que lo llamemos. el SO realiza alguna comprobacion de seguridad y eso afecta el rendimiento de la aplicacion
+File.Copy(path1,path2,true); // SI existe no haga nada
+path1: ubicacion de lo que queremos copiar    
+path2: ubicacion donde lo pondremos
+File.Delete(path);    
+//Ambos paths solo pueden     
+    
+    
+// METODOS
+Create();
+Copy();
+Delete(); // fileInfo.Delete()
+Exists(); // fileInfo.Exists
+GetAttributes();
+Move();
+ReadAllText();
+
+// DIRECTORIOS
+Directory: provee static methods
+Directory.CreateDirectory(@"c:\temo\folder1");
+// tiene hasta 3 sobrecargas, el ultimo parametro orden (EJ:todo los arhivos de cada directorio)
+var files = Directory.GetFiles(@"c:\proyects","*.sln"); // devuelve char**
+foreach(var file in files)
+    CW(file);
+
+var directories = Directory.GetDirectories(path,"*.*", SearchOption.AllDirectories);
+foreach(var dir in directories)
+    CW(dir);
+
+Directory.Exists(path);
+
+var directoryInfo = new DirectoryInfo();
+directoryInfo.GetFiles();
+directoryInfo.GetDirectories();
+
+    
+DirectoryInfo: provee instance methods
+CreateDirectory();
+Delete();
+Exists();
+GetCurrentDirectory();
+GetFiles();
+Move();
+GetLogicalDrives();
+
+// PATH
+Path.GetDirectoryName(path); // C:\Projects\Hello
+Path.GetFileName(path); // Hello.sln
+Path.GetExtension(path); // .sln
+Path.GetFileNameWithExtension(path); // Hello
+Path.GetTempPath(path);
+
+
+
 ````
 
