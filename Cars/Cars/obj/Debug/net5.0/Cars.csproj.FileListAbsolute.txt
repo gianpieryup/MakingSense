@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0\Cars.exe
+C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0\Cars.deps.json
+C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0\Cars.runtimeconfig.json
+C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0\Cars.runtimeconfig.dev.json
+C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0\Cars.dll
+C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0\ref\Cars.dll
+C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0\Cars.pdb
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.AssemblyInfo.cs
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.dll
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\ref\Cars.dll
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.pdb
+C:\Users\User\Desktop\MakingSense\Cars\Cars\obj\Debug\net5.0\Cars.genruntimeconfig.cache
