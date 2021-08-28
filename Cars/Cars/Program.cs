@@ -13,12 +13,14 @@ namespace Cars
             Console.WriteLine(CurrentDirectory);
 
             Car carrito = new Car("Volvo", "F99", 4, "ROJO");
-            Console.WriteLine("Carrito = " + carrito.Marca + " " + carrito.Modelo);
+            Console.WriteLine("Carrito = " + carrito.Marca + " " + carrito.Modelo + " " + carrito.Color);
             Console.WriteLine("Persistiendo en el JSON");
             
             CarCRUD bd = new CarCRUD();
-            Car carritob = bd.Create(carrito);
-
+            bd.Create(carrito);
+            Console.WriteLine("GET ID=1");
+            Car carget = bd.get(1);
+            Console.WriteLine("Carrito = " + carget.Marca + " " + carget.Modelo + " " + carget.Color);
 
         }
     }
