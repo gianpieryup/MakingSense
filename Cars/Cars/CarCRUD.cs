@@ -12,13 +12,23 @@ namespace Cars
     class CarCRUD
     {
         // Empienza -> C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0
-        public string carsJson = @"../../../Cars.json";
+        public string filename = @"../../../Cars.json";
         public Car Create(Car car)
         {
-            string jsonString = JsonSerializer.Serialize(car);
-            Console.WriteLine(jsonString);
-            File.WriteAllText(carsJson, jsonString); // Escriba al final no TOdo
-            car.id = 1;
+            string jsonString = File.ReadAllText(filename);
+            List<Car> listaCars = JsonSerializer.Deserialize<List<Car>>(jsonString);
+            Console.WriteLine("LISTA ACTUAL");
+            foreach (var c in listaCars)
+            {
+                Console.WriteLine("Elem" + c.Marca);
+            }
+
+            Console.WriteLine("AGREGANDO ...");
+            listaCars.Add(car);
+
+            string CarsSerializado = JsonSerializer.Serialize(listaCars);
+            File.WriteAllText(filename, CarsSerializado); // Escriba al final no TOdo
+
             // Asignacion de campos de la BD : ID, Fecha_creacion ,etc
             return car;
         }

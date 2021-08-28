@@ -12,7 +12,7 @@ namespace Cars
             var CurrentDirectory = Directory.GetCurrentDirectory();
             Console.WriteLine(CurrentDirectory);
 
-            Car carrito = new Car("Volvo", "F99", 4, "ROJO", true);
+            Car carrito = new Car("Volvo", "F99", 4, "ROJO");
             Console.WriteLine("Carrito = " + carrito.Marca + " " + carrito.Modelo);
             Console.WriteLine("Persistiendo en el JSON");
             
@@ -33,15 +33,17 @@ namespace Cars
         public string Modelo { get; set; }
         public int Cant_puertas { get; set; }
         public string Color { get; set; }
-        public bool Es_manual;
+        //public bool Es_manual;
 
-        public Car(string marca, string modelo, int cant_puertas, string color, bool es_manual)
+        public Car(string marca, string modelo, int cant_puertas, string color)
         {
             Marca = marca;
             Modelo = modelo;
             Cant_puertas = cant_puertas;
             Color = color;
-            Es_manual = es_manual;
+            // [TODO] Cuando tienes que decidir guardar cual es la mejor opcion en un caso bool
+            // Obviamente la BD no te guarda un "true" o un "False" podria mandar 0 - 1 como int
+            //Es_manual = es_manual;
         }
     }
 }
