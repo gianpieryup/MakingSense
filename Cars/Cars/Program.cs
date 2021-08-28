@@ -1,14 +1,24 @@
 ﻿using System;
+using System.IO;
 
 namespace Cars
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Car carrito = new Car("Volvo", "K47", 4, "ROJO", true);
+
+            var CurrentDirectory = Directory.GetCurrentDirectory();
+            Console.WriteLine(CurrentDirectory);
+
+            Car carrito = new Car("Volvo", "F99", 4, "ROJO", true);
             Console.WriteLine("Carrito = " + carrito.Marca + " " + carrito.Modelo);
+            Console.WriteLine("Persistiendo en el JSON");
+            
+            CarCRUD bd = new CarCRUD();
+            Car carritob = bd.Create(carrito);
+
 
         }
     }
@@ -16,7 +26,7 @@ namespace Cars
     class Car
     {
         // Valores de persistencia que me los dara la BD
-        public int id { get; }
+        public int id { get; set; }
         public DateTime fecha_creacion { get; }
 
         public string Marca { get; set; }
