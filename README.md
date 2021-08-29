@@ -421,3 +421,48 @@ Path.GetTempPath(path);
 cw + Tab + Tab = Console.WriteLine();
 ````
 
+#### DEBUG
+
+````
+F5 : Run in debug
+Shift + F5 : Stop the debug
+
+Porque y donde poner los puntitos rojos (Breakpoint) F10
+RPTA
+En las lineas donde quiera que se detenga el programa(se va ejecutar todo hasta llegar por primera ves a la bolita roja)
+Me permite visualizar los valores que tienen las variables en ese momento
+
+// A partir de AHI, PUEDO
+Flecha (F10 | Step Over) -> Corre la linea y se para en la siguiente 
+// Puedes pasar el cursor por las variables para ver cual es su valor
+Flecha (F11 | Step Into) -> Ingresar en la Funcion
+
+Shift + F11 | Step Out : Salir de un metodo
+¿Cuál es el atajo para detener la depuración? Shift + F5
+Mas como buscando si los valores o retornos de funciones sean los valores correctos de no ser asi, podemos entrar a la funcion que no esta dando el valor deseado
+````
+
+
+
+##### Ventana de Depuración
+
+Como la de `Spyder ` la sacamos con `DEBUG > windows > Watch > Watch 1 ` 
+
+En esta Ventana definimos que valores queremos controlar, luego se verán como filas, Cuando estén cambiando estos valores (se pondrán en rojo)
+
+También podemos usar las que nos muestre todas las que se usan y **no estar especificando** `DEBUG > windows > Autos(muestra todas las variables) | Locales(muestra las variables locales) `
+
+Como Solucionar
+
+````c#
+if (count > list.Count)
+	throw new ArgumentOutOfRangeExceptions("algo con el count")
+
+// ATRAPAR el error en la funcion mas grande no en la funcion particular, se estarian haciendo cosas para despues tirar un Excepcion
+    // DEfinir correctamnte que tipo de expetion y si se debe cortar o no (try cath)
+````
+
+Pila de Llamadas
+
+Podemos ver la pila de funciones `F1 > F2 > F3 ` con `DEBUG > Windows > Call Stack`
+
