@@ -1,3 +1,38 @@
+## PROYECTO
+
+`Cars : ABM + persistencia en un archivo JSON`
+
+Aclaraciones
+
+````c#
+CREAR PROYECTO
+Usamos el netcore 5
+Porque ya tiene clases para manejar el JSON
+System.Text.Json
+
+---------------------------
+// parametros que me da la BD
+fecha de creacion
+id 
+
+// Dato de color
+EL for recorre elemento a elemento por indice
+// Puedo modificar la lista
+
+
+El foreach recorre una copia
+// No se modifica la lista original
+
+EL gitignore se hace al principio
+Despues no, lo trakea
+````
+
+
+
+
+
+
+
 # Capacitación .NET
 
 C# es un lenguaje de programación
@@ -382,6 +417,7 @@ Path.GetFileNameWithExtension(path); // Hello
 Path.GetTempPath(path);
 
 
-
+// VS
+cw + Tab + Tab = Console.WriteLine();
 ````
 
