@@ -12,32 +12,52 @@ namespace Cars
     class CarCRUD
     {
         // Empienza -> C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0
-        public string filename = @"../../../Cars.json";
-        public void Create(Car car)
-        {
+
+        string filename = @"../../../Cars.json";
+        public List<Car> LeerListaCars()
+        {        
             string jsonString = File.ReadAllText(filename);
             List<Car> listaCars = JsonSerializer.Deserialize<List<Car>>(jsonString);
+            return listaCars;
+        }
 
-            if (listaCars)  // NO vacia
+        public void ActualizarJSON(List<Car> cars)
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };// Opcion con IDENTACION
+            string CarsSerializado = JsonSerializer.Serialize(cars, options);
+            File.WriteAllText(filename, CarsSerializado);
+        }
+
+        public int IndicePorID(int id)
+        {
+            List<Car> listaCars = LeerListaCars();
+            int i;
+            for (i = 0; i < listaCars.Count; i++)
+            {
+                if (listaCars[i].id == id)
+                    break;
+            }
+            return i;
+        }
+
+        public void Create(Car car)
+        {
+            List<Car> listaCars = LeerListaCars();
+
+            // Asignacion de campos de la BD : ID, Fecha_creacion ,etc| SOL Momentania
+            if (listaCars.Count >= 1)  // NO vacia
                 car.id = listaCars[listaCars.Count - 1].id + 1; // id ultimo + 1
-            else    // []
+            else
                 car.id = 0;
             
             listaCars.Add(car);
-
-            var options = new JsonSerializerOptions { WriteIndented = true };// Opcion con IDENTACION
-            string CarsSerializado = JsonSerializer.Serialize(listaCars, options);
-            File.WriteAllText(filename, CarsSerializado);
-
-            // Asignacion de campos de la BD : ID, Fecha_creacion ,etc Pero eso persistido
+            ActualizarJSON(listaCars);
         }
 
         public Car get(int id)
         {
-            string jsonstring = File.ReadAllText(filename);
-            List<Car> listacars = JsonSerializer.Deserialize<List<Car>>(jsonstring);
-            
-            foreach (var c in listacars)
+            List<Car> listaCars = LeerListaCars();
+            foreach (var c in listaCars)
             {
                 if (c.id == id)
                     return c;
@@ -46,36 +66,28 @@ namespace Cars
             return null;
         }
 
-        public Car Update(Car car)
+        public void Update(Car car)
         {
-            string jsonstring = File.ReadAllText(filename);// ISSUE : dejar arriba
-            List<Car> listacars = JsonSerializer.Deserialize<List<Car>>(jsonstring);
+            List<Car> listaCars = LeerListaCars();
+            int indice = IndicePorID(car.id);
 
-            Car antiguo = self.get(car.id);// NONO 4,8,9
+            Car antiguo = listaCars[indice];
             antiguo.Marca = car.Marca;
             antiguo.Modelo = car.Modelo;
             antiguo.Puertas = car.Puertas;
             antiguo.Color = car.Color;
 
-            var options = new JsonSerializerOptions { WriteIndented = true };// Opcion con IDENTACION
-            string CarsSerializado = JsonSerializer.Serialize(listaCars, options);
-            File.WriteAllText(filename, CarsSerializado);
+            ActualizarJSON(listaCars);
         }
 
         public void Delete(int id)
         {
-            string jsonstring = File.ReadAllText(filename);// ISSUE : dejar arriba
-            List<Car> listacars = JsonSerializer.Deserialize<List<Car>>(jsonstring);
-
-            int i;
-            for(i=0; i < listacars.Count;i++){
-                if (listacars[i].id == id)
-                    break;
-            }
-            Console.WriteLine("Valor del indice"+i);
-            //listacars.RemoveAt(i); // ese i es la pos en la lista
-
+            List<Car> listaCars = LeerListaCars();
+            int indice = IndicePorID(id);
+            listaCars.RemoveAt(indice);
+            ActualizarJSON(listaCars);
         }
+
     }
 }
 

@@ -11,18 +11,24 @@ namespace Cars
 
             var CurrentDirectory = Directory.GetCurrentDirectory();
             Console.WriteLine(CurrentDirectory);
-
-            Car carrito = new Car("Ford", "K21", 4, "ROJO");
-            //Console.WriteLine(carrito.printear())
-            Console.WriteLine("Carrito = " + carrito.Marca + " " + carrito.Modelo + " " + carrito.Color);
-            Console.WriteLine("Persistiendo en el JSON");
-            
             CarCRUD bd = new CarCRUD();
-            bd.Create(carrito);
 
-            Console.WriteLine("GET ID=1");
-            Car carget = bd.get(1);
-            Console.WriteLine("Carrito = " + carget.Marca + " " + carget.Modelo + " " + carget.Color);
+            Console.WriteLine("\nAGREGANDO nuevo carro");
+            Car carNew = new Car("Ford", "K21", 4, "ROJO");
+            Console.WriteLine(carNew.printear());
+            bd.Create(carNew);
+
+            Console.WriteLine("\nGET ID = 0");
+            Car carGet = bd.get(0);
+            Console.WriteLine(carGet.printear());
+
+            Console.WriteLine("\nUPDAPTEAR el carro con id = 1");
+            Car carUpdate = new Car("Chevrolet", "U90", 2, "AZUL");
+            carUpdate.id = 1;
+            bd.Update(carUpdate);
+
+            Console.WriteLine("\nDELETEAR el carro con id = 0");
+            bd.Delete(0);
         }
     }
 
@@ -50,7 +56,7 @@ namespace Cars
         }
 
         public string printear(){
-            string name = string.Format("Carro: {0} {1} {2}",self.Marca,self.Modelo,self.Color);
+            string name = string.Format("Carro: {0} {1} {2}", Marca, Modelo, Color);
             return name;
         }
     }

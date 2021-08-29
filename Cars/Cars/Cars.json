@@ -1,66 +1,26 @@
 [
   {
-    "id": 0,
-    "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Volvo",
-    "Modelo": "F99",
-    "Cant_puertas": 4,
-    "Color": "ROJO"
-  },
-  {
     "id": 1,
     "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Toyota",
-    "Modelo": "F100",
-    "Cant_puertas": 2,
+    "Marca": "Chevrolet",
+    "Modelo": "U90",
+    "Puertas": 2,
     "Color": "AZUL"
   },
   {
     "id": 2,
     "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Volvo",
-    "Modelo": "F99",
-    "Cant_puertas": 4,
+    "Marca": "Ford",
+    "Modelo": "K21",
+    "Puertas": 4,
     "Color": "ROJO"
   },
   {
-    "id": 4,
+    "id": 3,
     "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Volvo",
-    "Modelo": "F99",
-    "Cant_puertas": 4,
-    "Color": "ROJO"
-  },
-  {
-    "id": 8,
-    "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Volvo",
-    "Modelo": "F99",
-    "Cant_puertas": 4,
-    "Color": "ROJO"
-  },
-  {
-    "id": 8,
-    "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Volvo",
-    "Modelo": "F99",
-    "Cant_puertas": 4,
-    "Color": "ROJO"
-  },
-  {
-    "id": 8,
-    "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Volvo",
-    "Modelo": "F99",
-    "Cant_puertas": 4,
-    "Color": "ROJO"
-  },
-  {
-    "id": 9,
-    "fecha_creacion": "0001-01-01T00:00:00",
-    "Marca": "Volvo",
-    "Modelo": "F99",
-    "Cant_puertas": 4,
+    "Marca": "Ford",
+    "Modelo": "K21",
+    "Puertas": 4,
     "Color": "ROJO"
   }
 ]
