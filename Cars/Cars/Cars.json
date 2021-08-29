@@ -5,7 +5,8 @@
     "Marca": "Chevrolet",
     "Modelo": "U90",
     "Puertas": 2,
-    "Color": "AZUL"
+    "Color": "AZUL",
+    "Manual": 1
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "Marca": "Ford",
     "Modelo": "K21",
     "Puertas": 4,
-    "Color": "ROJO"
+    "Color": "ROJO",
+    "Manual": 0
   },
   {
     "id": 3,
@@ -21,6 +23,43 @@
     "Marca": "Ford",
     "Modelo": "K21",
     "Puertas": 4,
-    "Color": "ROJO"
+    "Color": "ROJO",
+    "Manual": 0
+  },
+  {
+    "id": 5,
+    "fecha_creacion": "2021-08-28T19:18:58.9272009-07:00",
+    "Marca": "Ford",
+    "Modelo": "K21",
+    "Puertas": 4,
+    "Color": "ROJO",
+    "Manual": 0
+  },
+  {
+    "id": 6,
+    "fecha_creacion": "2021-08-28T19:20:07.4398497-07:00",
+    "Marca": "Ford",
+    "Modelo": "K21",
+    "Puertas": 4,
+    "Color": "ROJO",
+    "Manual": 0
+  },
+  {
+    "id": 7,
+    "fecha_creacion": "Saturday, 28 August 2021",
+    "Marca": "Ford",
+    "Modelo": "K21",
+    "Puertas": 4,
+    "Color": "ROJO",
+    "Manual": 0
+  },
+  {
+    "id": 8,
+    "fecha_creacion": "Saturday, August 28, 2021 7:39 PM",
+    "Marca": "Ford",
+    "Modelo": "K21",
+    "Puertas": 4,
+    "Color": "ROJO",
+    "Manual": 0
   }
 ]

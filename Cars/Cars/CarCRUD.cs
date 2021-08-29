@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Globalization;// Para usar la fecha en formato regional
 
 namespace Cars
 {
@@ -49,7 +50,9 @@ namespace Cars
                 car.id = listaCars[listaCars.Count - 1].id + 1; // id ultimo + 1
             else
                 car.id = 0;
-            
+
+            CultureInfo cultura = CultureInfo.CreateSpecificCulture("en-US");
+            car.fecha_creacion = DateTime.Now.ToString("f", cultura);
             listaCars.Add(car);
             ActualizarJSON(listaCars);
         }
@@ -76,7 +79,7 @@ namespace Cars
             antiguo.Modelo = car.Modelo;
             antiguo.Puertas = car.Puertas;
             antiguo.Color = car.Color;
-
+            antiguo.Manual = car.Manual;
             ActualizarJSON(listaCars);
         }
 
