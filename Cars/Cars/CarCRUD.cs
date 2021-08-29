@@ -18,7 +18,11 @@ namespace Cars
             string jsonString = File.ReadAllText(filename);
             List<Car> listaCars = JsonSerializer.Deserialize<List<Car>>(jsonString);
 
-            car.id = listaCars[listaCars.Count - 1].id + 1; // id ultimo + 1
+            if (listaCars)  // NO vacia
+                car.id = listaCars[listaCars.Count - 1].id + 1; // id ultimo + 1
+            else    // []
+                car.id = 0;
+            
             listaCars.Add(car);
 
             var options = new JsonSerializerOptions { WriteIndented = true };// Opcion con IDENTACION
@@ -42,13 +46,35 @@ namespace Cars
             return null;
         }
 
-        //public Car Update(Car car)
-        //{
-        //    // Code here
-        //}
+        public Car Update(Car car)
+        {
+            string jsonstring = File.ReadAllText(filename);// ISSUE : dejar arriba
+            List<Car> listacars = JsonSerializer.Deserialize<List<Car>>(jsonstring);
+
+            Car antiguo = self.get(car.id);// NONO 4,8,9
+            antiguo.Marca = car.Marca;
+            antiguo.Modelo = car.Modelo;
+            antiguo.Puertas = car.Puertas;
+            antiguo.Color = car.Color;
+
+            var options = new JsonSerializerOptions { WriteIndented = true };// Opcion con IDENTACION
+            string CarsSerializado = JsonSerializer.Serialize(listaCars, options);
+            File.WriteAllText(filename, CarsSerializado);
+        }
+
         public void Delete(int id)
         {
-            // Code here
+            string jsonstring = File.ReadAllText(filename);// ISSUE : dejar arriba
+            List<Car> listacars = JsonSerializer.Deserialize<List<Car>>(jsonstring);
+
+            int i;
+            for(i=0; i < listacars.Count;i++){
+                if (listacars[i].id == id)
+                    break;
+            }
+            Console.WriteLine("Valor del indice"+i);
+            //listacars.RemoveAt(i); // ese i es la pos en la lista
+
         }
     }
 }
