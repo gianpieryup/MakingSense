@@ -79,7 +79,7 @@ namespace Cars
             antiguo.Modelo = car.Modelo;
             antiguo.Puertas = car.Puertas;
             antiguo.Color = car.Color;
-            antiguo.Manual = car.Manual;
+            antiguo.KindCar = car.KindCar;
             ActualizarJSON(listaCars);
         }
 

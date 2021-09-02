@@ -12,16 +12,17 @@ namespace Cars
             CarCRUD bd = new CarCRUD();
 
             Console.WriteLine("\nAGREGANDO nuevo carro");
-            Car carNew = new Car("Ford", "K21", 4, "ROJO",0); 
+            Car carNew = new Car("Ford", "K21", 4, "ROJO",kind.MA); 
             Console.WriteLine(carNew.printear());
             bd.Create(carNew);
+            
             
             Console.WriteLine("\nGET ID = 0");
             Car carGet = bd.get(2); // Verificar que exista TODO : atraparlo con un exepcion
             Console.WriteLine(carGet.printear());
             
             Console.WriteLine("\nUPDAPTEAR el carro con id = 1");
-            Car carUpdate = new Car("Chevrolet", "U90", 2, "AZUL",1);
+            Car carUpdate = new Car("Chevrolet", "U90", 2, "AZUL",kind.LU);
             carUpdate.id = 1;
             bd.Update(carUpdate);
             /*
@@ -29,7 +30,8 @@ namespace Cars
             bd.Delete(4);*/
         }
     }
-
+    
+    public enum kind { LU, MA, MI };
     class Car
     {
         // Valores de persistencia que me los dara la BD
@@ -39,17 +41,15 @@ namespace Cars
         public string Modelo { get; set; }
         public int Puertas { get; set; }
         public string Color { get; set; }
-        public int Manual { get; set; } // 1 = Manual | 0 = Automatico
+        public kind KindCar { get; set; }
 
-        public Car(string marca, string modelo, int puertas, string color, int manual)
+        public Car(string marca, string modelo, int puertas, string color, kind kindCar)
         {
             Marca = marca;
             Modelo = modelo;
             Puertas = puertas;
             Color = color;
-            // [TODO] Cuando tienes que decidir guardar cual es la mejor opcion en un caso bool
-            // Obviamente la BD no te guarda un "true" o un "False" podria mandar 0 - 1 como int
-            Manual = manual;
+            KindCar = kindCar;
         }
 
         public string printear(){
