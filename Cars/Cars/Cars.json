@@ -34,5 +34,23 @@
     "Puertas": 4,
     "Color": "Rojo",
     "KindCar": 0
+  },
+  {
+    "id": 4,
+    "fecha_creacion": "Saturday, September 4, 2021 9:14 PM",
+    "Marca": "Chevrolet",
+    "Modelo": "K21 X20",
+    "Puertas": 4,
+    "Color": "Rojo",
+    "KindCar": 0
+  },
+  {
+    "id": 5,
+    "fecha_creacion": "Saturday, September 4, 2021 9:15 PM",
+    "Marca": "Chevrolet",
+    "Modelo": "K21 X20",
+    "Puertas": 4,
+    "Color": "Rojo",
+    "KindCar": 0
   }
 ]
