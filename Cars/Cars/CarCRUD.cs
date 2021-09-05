@@ -12,12 +12,18 @@ namespace Cars
 {
     class CarCRUD
     {
-        // Empienza -> C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0
 
-        string filename = @"../../../Cars.json";
+        public Configuraciones config; // path
+        public CarCRUD() // CONSTRUCTOR para inicializar las variables
+        {
+            // Empienza -> C:\Users\User\Desktop\MakingSense\Cars\Cars\bin\Debug\net5.0
+            string jsonConfigs = File.ReadAllText(@"../../../appsettings.json");
+            config = JsonSerializer.Deserialize<Configuraciones>(jsonConfigs);
+        }
+
         public List<Car> LeerListaCars()
         {        
-            string jsonString = File.ReadAllText(filename);
+            string jsonString = File.ReadAllText(config.path);
             List<Car> listaCars = JsonSerializer.Deserialize<List<Car>>(jsonString);
             return listaCars;
         }
@@ -26,7 +32,7 @@ namespace Cars
         {
             var options = new JsonSerializerOptions { WriteIndented = true };// Opcion con IDENTACION
             string CarsSerializado = JsonSerializer.Serialize(cars, options);
-            File.WriteAllText(filename, CarsSerializado);
+            File.WriteAllText(config.path, CarsSerializado);
         }
 
         public int IndicePorID(int id)
@@ -67,6 +73,17 @@ namespace Cars
             }
 
             return null;
+        }
+
+        public void getAllPrint()
+        {
+            List<Car> listaCars = LeerListaCars();
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine(string.Format("{0,-3} | {1,-11} | {2,-8} | {3,-8}", "Id", "Marca", "Modelo", "Color"));
+            Console.WriteLine("---------------------------------------");
+            foreach (var c in listaCars)
+                Console.WriteLine(c.printear());
+            Console.WriteLine("---------------------------------------");
         }
 
         public void Update(Car car)

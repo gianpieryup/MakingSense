@@ -30,8 +30,9 @@ namespace Cars
 
         public string printear()
         {
-            string name = string.Format("Carro: {0} {1} {2}", Marca, Modelo, Color);
+            string name = string.Format("{0,-3} | {1,-11} | {2,-8} | {3,-8}",id, Marca, Modelo, Color);
             return name;
         }
+
     }
 }
