@@ -29,7 +29,10 @@ Despues no, lo trakea
 
 
 
+Nuget = Npm
 
+archivos de configuracion
+appsetting.json  =  al de json
 
 
 
