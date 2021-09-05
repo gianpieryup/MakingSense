@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "fecha_creacion": "Thursday, September 2, 2021 10:40 AM",
+    "fecha_creacion": "Saturday, September 4, 2021 8:25 PM",
     "Marca": "Ford",
     "Modelo": "K21",
     "Puertas": 4,
@@ -10,29 +10,11 @@
   },
   {
     "id": 1,
-    "fecha_creacion": "Thursday, September 2, 2021 10:40 AM",
-    "Marca": "Chevrolet",
-    "Modelo": "U90",
-    "Puertas": 2,
-    "Color": "AZUL",
+    "fecha_creacion": "Saturday, September 4, 2021 8:25 PM",
+    "Marca": "Ford",
+    "Modelo": "K21",
+    "Puertas": 4,
+    "Color": "ROJO",
     "KindCar": 0
-  },
-  {
-    "id": 2,
-    "fecha_creacion": "Thursday, September 2, 2021 10:41 AM",
-    "Marca": "Ford",
-    "Modelo": "K21",
-    "Puertas": 4,
-    "Color": "ROJO",
-    "KindCar": 1
-  },
-  {
-    "id": 3,
-    "fecha_creacion": "Thursday, September 2, 2021 10:41 AM",
-    "Marca": "Ford",
-    "Modelo": "K21",
-    "Puertas": 4,
-    "Color": "ROJO",
-    "KindCar": 1
   }
 ]
